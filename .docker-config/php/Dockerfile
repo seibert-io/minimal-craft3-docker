@@ -21,10 +21,10 @@ RUN apt-get install -y --no-install-recommends libmagickwand-dev && \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin/ --filename=composer
 RUN composer global require hirak/prestissimo
 
-RUN echo "upload_max_filesize = 10M" > /usr/local/etc/php/php.ini && \
-    echo "post_max_size = 10M" >> /usr/local/etc/php/php.ini && \
+RUN echo "upload_max_filesize = 100M" > /usr/local/etc/php/php.ini && \
+    echo "post_max_size = 100M" >> /usr/local/etc/php/php.ini && \
     echo "max_execution_time = 300" >> /usr/local/etc/php/php.ini && \
-    echo "memory_limit = 256M" >> /usr/local/etc/php/php.ini
+    echo "memory_limit = 512M" >> /usr/local/etc/php/php.ini
 
 COPY --chown=www-data:www-data ./src/config /var/www/html/config
 COPY --chown=www-data:www-data ./src/modules /var/www/html/modules
