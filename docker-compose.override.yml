@@ -4,7 +4,7 @@ services:
         volumes:
             - ./src/web:/var/www/html/web
 
-    php:
+    app:
         volumes:
             - ./src/config:/var/www/html/config
             - ./src/templates:/var/www/html/templates
